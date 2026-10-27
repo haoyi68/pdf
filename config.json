@@ -1,0 +1,54 @@
+{
+  "log": { "loglevel": "warning" },
+  "inbounds": [
+    {
+      "port": 53,
+      "listen": "::",
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          { "id": "3a176c3f-aa1b-4779-83e6-be4cdf48ddb3", "level": 0, "alterId": 0 }
+        ]
+      },
+      "streamSettings": {
+        "network": "kcp",
+        "kcpSettings": {
+          "mtu": 1350,
+          "tti": 20,
+          "uplinkCapacity": 10,
+          "downlinkCapacity": 100,
+          "congestion": false,
+          "readBufferSize": 4,
+          "writeBufferSize": 2,
+          "header": { "type": "wechat-video" }
+        }
+      }
+    },
+    {
+      "port": 443,
+      "listen": "::",
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          { "id": "8a29d43c-77cc-424b-9ab3-16b32bd3e2d0", "level": 0, "alterId": 0 }
+        ]
+      },
+      "streamSettings": {
+        "network": "kcp",
+        "kcpSettings": {
+          "mtu": 1350,
+          "tti": 30,
+          "uplinkCapacity": 15,
+          "downlinkCapacity": 150,
+          "congestion": false,
+          "readBufferSize": 4,
+          "writeBufferSize": 2,
+          "header": { "type": "srtp" }
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    { "protocol": "freedom", "settings": {} }
+  ]
+}
