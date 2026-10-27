@@ -1,0 +1,28 @@
+{
+  "log": { "loglevel": "warning" },
+  "inbounds": [{
+    "port": 9999,
+    "protocol": "vmess",
+    "settings": {
+      "clients": [
+        { "id": "43bb8509-4f95-47d3-98a7-4bbabff7a95d", "level": 0, "alterId": 0 }
+      ]
+    },
+    "streamSettings": {
+      "network": "kcp",
+      "kcpSettings": {
+        "mtu": 1350,
+        "tti": 50,
+        "uplinkCapacity": 5,
+        "downlinkCapacity": 20,
+        "congestion": false,
+        "readBufferSize": 1,
+        "writeBufferSize": 1,
+        "header": { "type": "none" }
+      }
+    }
+  }],
+  "outbounds": [
+    { "protocol": "freedom", "settings": {} }
+  ]
+}
